@@ -5,10 +5,10 @@
     {% for post in posts %}
         <div class="post">
             <div class="date">
-               <p>published: {{ post.published_date }} </p>
+               <p>published:
                {% timezone "America/New_York" %}
-               <p>         : {{ post.published_date }} </p>
-               {% endtimezone %}
+                {{ post.published_date }}
+               {% endtimezone %} </p>
             </div>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
             <p>{{post.text|linebreaksbr}}</p>
