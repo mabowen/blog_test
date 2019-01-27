@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Delete the following post?</h2>
+    <p> Note - This can not be un-done</p>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="Ok" class="save btn btn-default">Delete</button>
+        <a href="{% url 'post_list' %}">Cancel</a>
+        
+    </form>
+{% endblock %}
